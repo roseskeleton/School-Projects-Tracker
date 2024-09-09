@@ -1,0 +1,43 @@
+package guesinggame;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Omphemetse
+ */
+public class GuesingGame {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+      
+        int guess = 0;
+        int counter = 0;
+        int random = (int) (Math.random() * 101) + 1;
+        //System.out.println("RandomNr: " + random);
+        
+        do
+        {
+           guess = Integer.parseInt(JOptionPane.showInputDialog("Enter random number Between one to 100"));
+           counter++;
+           
+            if (random > guess) 
+            {
+                System.out.println("TOO LOW. TRY AGAIN");   
+            }
+            else
+                if (random < guess) 
+                {
+                    System.out.println("TOO HIGH. TRY AGAIN");
+                }
+            
+        }while(random != guess);
+        
+        System.out.println("CORRECT! You guessed the number in " + counter + " attempts. Congulations");
+        
+        
+    }
+    
+}
