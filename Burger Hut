@@ -1,0 +1,70 @@
+package burgerhut;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Omphemetse
+ */
+public class BurgerHut {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        String name = JOptionPane.showInputDialog("Enter partcipate's name");
+        System.out.println("Name: \t" + name);
+        
+        
+        while (!name.equalsIgnoreCase("XXX"))
+        {
+        int birthY = Integer.parseInt(JOptionPane.showInputDialog("Enter birth year"));
+        int currentY = Integer.parseInt(JOptionPane.showInputDialog("Enter current year"));
+        int age = currentY - birthY;
+           System.out.println("Age: \t" + age);
+           
+           
+            if (age <= 3 || age <= 5) 
+            {
+                System.out.println("Kiddies");
+                age++;
+            }
+            else
+                if (age <= 6 || age <= 8) 
+                {
+                    System.out.println("Category: " + "Juniors");
+                    age++;
+                    break;
+                }
+                else 
+                    if (age <= 9 || age <= 12) 
+                    {
+                        System.out.println("Category: " + "Big Kids");
+                        age++;
+                        break;
+                    }
+                    else 
+                        if (age <= 13 || age <= 16) 
+                        {
+                            System.out.println("Category: " + "Teens");
+                            age++;
+                            break;
+                        }
+                        else
+                            if (age <= 17 || age <= 18) 
+                            {
+                                System.out.println("Category: " + "Seniors");
+                                age++;
+                                break;
+                            } 
+                            else 
+                            {
+                                System.out.println("Invaild age");
+                            }
+            
+            }
+        }
+        
+        
+    }
